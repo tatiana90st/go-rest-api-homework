@@ -76,7 +76,6 @@ func postTask(w http.ResponseWriter, r *http.Request) {
 
 	tasks[task.ID] = task
 
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 }
 
@@ -114,7 +113,6 @@ func deleteTaskById(w http.ResponseWriter, r *http.Request) {
 
 	delete(tasks, id)
 
-	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 }
 
